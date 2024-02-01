@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Outgoing north routes   -->
+    <route id="route_nsI" edges="4i 3o"/>
+    <route id="route_nsO" edges="4i 3o"/>
+    <route id="route_nwO" edges="4i 1o"/>
+
+    <!-- Outgoing west routes   -->
+    <route id="route_weI" edges="1i 2o"/>
+    <route id="route_weO" edges="1i 2o"/>
+    <route id="route_ws0" edges="1i 3o"/>
+
+    <!-- Outgoing south routes   -->
+    <route id="route_snI" edges="3i 4o"/>
+    <route id="route_snO" edges="3i 4o"/>
+    <route id="route_seO" edges="3i 2o"/>
+
+    <!-- Outgoing east routes   -->
+    <route id="route_ewI" edges="2i 1o"/>
+    <route id="route_ewO" edges="2i 1o"/>
+    <route id="route_en0" edges="2i 4o"/>
+
+    <!--    <vTypeDistribution id="randVehicles">-->
+<!--		<vType id="bike" length="2.2" width="0.9" height="1.5" minGap="1.0" sigma="0.6" accel="6.0" decel="10.0" maxSpeed="25.0" guiShape="motorcycle" probability="0.05"/>-->
+<!--		<vType id="car" length="4.3" width="1.8" height="1.5" minGap="1.2" sigma="0.5" accel="2.9" decel="7.5" maxSpeed="27.78" guiShape="passenger" probability="0.7"/>-->
+<!--		<vType id="van" length="7.1" width="2.4" height="2.4" minGap="1.5" sigma="0.5" accel="1.3" decel="4.0" maxSpeed="22.22" guiShape="truck" color="0.753,0.753,0.753" probability="0.15"/>-->
+<!--		<vType id="bustruck" length="12.0" width="2.5" height="3.4" minGap="1.5" sigma="0.5" accel="1.2" decel="4.0" maxSpeed="19.44" guiShape="bus" color="0.678,1.0,0.184" probability="0.1"/>-->
+<!--    </vTypeDistribution>-->
+
+    <!-- Traffic flow for routes   -->
+
+    <!--    00.00 -->
+    <flow id="flow_nsI" route="route_nsI" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns0" route="route_nsO" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw0" route="route_nwO" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI" route="route_weI" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we0" route="route_weO" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws0" route="route_ws0" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI" route="route_snI" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn0" route="route_snO" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se0" route="route_seO" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI" route="route_ewI" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew0" route="route_ewO" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en0" route="route_en0" begin="0" end="3600" vehsPerHour="150" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    01.00 -->
+    <flow id="flow_nsI2" route="route_nsI" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns02" route="route_nsO" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw02" route="route_nwO" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI2" route="route_weI" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we02" route="route_weO" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws02" route="route_ws0" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI2" route="route_snI" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn02" route="route_snO" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se02" route="route_seO" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI2" route="route_ewI" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew02" route="route_ewO" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en02" route="route_en0" begin="3600" end="7200" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    02.00 -->
+    <flow id="flow_nsI3" route="route_nsI" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns03" route="route_nsO" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw03" route="route_nwO" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI3" route="route_weI" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we03" route="route_weO" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws03" route="route_ws0" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI3" route="route_snI" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn03" route="route_snO" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se03" route="route_seO" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI3" route="route_ewI" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew03" route="route_ewO" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en03" route="route_en0" begin="7200" end="10800" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    03.00 -->
+    <flow id="flow_nsI4" route="route_nsI" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns04" route="route_nsO" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw04" route="route_nwO" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI4" route="route_weI" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we04" route="route_weO" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws04" route="route_ws0" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI4" route="route_snI" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn04" route="route_snO" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se04" route="route_seO" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI4" route="route_ewI" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew04" route="route_ewO" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en04" route="route_en0" begin="10800" end="14400" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    04.00 -->
+    <flow id="flow_nsI5" route="route_nsI" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns05" route="route_nsO" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw05" route="route_nwO" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI5" route="route_weI" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we05" route="route_weO" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws05" route="route_ws0" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI5" route="route_snI" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn05" route="route_snO" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se05" route="route_seO" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI5" route="route_ewI" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew05" route="route_ewO" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en05" route="route_en0" begin="14400" end="18000" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    05.00 -->
+    <flow id="flow_nsI6" route="route_nsI" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns06" route="route_nsO" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw06" route="route_nwO" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI6" route="route_weI" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we06" route="route_weO" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws06" route="route_ws0" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI6" route="route_snI" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn06" route="route_snO" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se06" route="route_seO" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI6" route="route_ewI" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew06" route="route_ewO" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en06" route="route_en0" begin="18000" end="21600" vehsPerHour="100" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    06.00 -->
+    <flow id="flow_nsI7" route="route_nsI" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns07" route="route_nsO" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw07" route="route_nwO" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI7" route="route_weI" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we07" route="route_weO" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws07" route="route_ws0" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI7" route="route_snI" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn07" route="route_snO" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se07" route="route_seO" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI7" route="route_ewI" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew07" route="route_ewO" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en07" route="route_en0" begin="21600" end="25200" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    07.00 -->
+    <flow id="flow_nsI8" route="route_nsI" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns08" route="route_nsO" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw08" route="route_nwO" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI8" route="route_weI" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we08" route="route_weO" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws08" route="route_ws0" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI8" route="route_snI" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn08" route="route_snO" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se08" route="route_seO" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI8" route="route_ewI" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew08" route="route_ewO" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en08" route="route_en0" begin="25200" end="28800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    08.00 -->
+    <flow id="flow_nsI9" route="route_nsI" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns09" route="route_nsO" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw09" route="route_nwO" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI9" route="route_weI" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we09" route="route_weO" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws09" route="route_ws0" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI9" route="route_snI" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn09" route="route_snO" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se09" route="route_seO" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI9" route="route_ewI" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew09" route="route_ewO" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en09" route="route_en0" begin="28800" end="32400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    09.00 -->
+    <flow id="flow_nsI10" route="route_nsI" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns010" route="route_nsO" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw010" route="route_nwO" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI10" route="route_weI" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we010" route="route_weO" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws010" route="route_ws0" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI10" route="route_snI" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn010" route="route_snO" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se010" route="route_seO" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI10" route="route_ewI" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew010" route="route_ewO" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en010" route="route_en0" begin="32400" end="36000" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    10.00 -->
+    <flow id="flow_nsI11" route="route_nsI" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns011" route="route_nsO" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw011" route="route_nwO" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI11" route="route_weI" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we011" route="route_weO" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws011" route="route_ws0" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI11" route="route_snI" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn011" route="route_snO" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se011" route="route_seO" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI11" route="route_ewI" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew011" route="route_ewO" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en011" route="route_en0" begin="36000" end="39600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    11.00 -->
+    <flow id="flow_nsI12" route="route_nsI" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns012" route="route_nsO" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw012" route="route_nwO" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI12" route="route_weI" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we012" route="route_weO" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws012" route="route_ws0" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI12" route="route_snI" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn012" route="route_snO" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se012" route="route_seO" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI12" route="route_ewI" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew012" route="route_ewO" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en012" route="route_en0" begin="39600" end="43200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    12.00 -->
+    <flow id="flow_nsI13" route="route_nsI" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns013" route="route_nsO" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw013" route="route_nwO" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI13" route="route_weI" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we013" route="route_weO" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws013" route="route_ws0" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI13" route="route_snI" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn013" route="route_snO" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se013" route="route_seO" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI13" route="route_ewI" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew013" route="route_ewO" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en013" route="route_en0" begin="43200" end="46800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    13.00 -->
+    <flow id="flow_nsI14" route="route_nsI" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns014" route="route_nsO" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw014" route="route_nwO" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI14" route="route_weI" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we014" route="route_weO" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws014" route="route_ws0" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI14" route="route_snI" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn014" route="route_snO" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se014" route="route_seO" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI14" route="route_ewI" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew014" route="route_ewO" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en014" route="route_en0" begin="46800" end="50400" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    14.00 -->
+    <flow id="flow_nsI15" route="route_nsI" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns015" route="route_nsO" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw015" route="route_nwO" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI15" route="route_weI" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we015" route="route_weO" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws015" route="route_ws0" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI15" route="route_snI" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn015" route="route_snO" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se015" route="route_seO" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI15" route="route_ewI" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew015" route="route_ewO" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en015" route="route_en0" begin="50400" end="54000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    15.00 -->
+    <flow id="flow_nsI16" route="route_nsI" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns016" route="route_nsO" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw016" route="route_nwO" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI16" route="route_weI" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we016" route="route_weO" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws016" route="route_ws0" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI16" route="route_snI" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn016" route="route_snO" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se016" route="route_seO" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI16" route="route_ewI" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew016" route="route_ewO" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en016" route="route_en0" begin="54000" end="57600" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    16.00 -->
+    <flow id="flow_nsI17" route="route_nsI" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns017" route="route_nsO" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw017" route="route_nwO" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI17" route="route_weI" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we017" route="route_weO" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws017" route="route_ws0" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI17" route="route_snI" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn017" route="route_snO" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se017" route="route_seO" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI17" route="route_ewI" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew017" route="route_ewO" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en017" route="route_en0" begin="57600" end="61200" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    17.00 -->
+    <flow id="flow_nsI18" route="route_nsI" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns018" route="route_nsO" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw018" route="route_nwO" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI18" route="route_weI" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we018" route="route_weO" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws018" route="route_ws0" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI18" route="route_snI" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn018" route="route_snO" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se018" route="route_seO" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI18" route="route_ewI" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew018" route="route_ewO" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en018" route="route_en0" begin="61200" end="64800" vehsPerHour="550" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    18.00 -->
+    <flow id="flow_nsI19" route="route_nsI" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns019" route="route_nsO" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw019" route="route_nwO" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI19" route="route_weI" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we019" route="route_weO" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws019" route="route_ws0" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI19" route="route_snI" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn019" route="route_snO" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se019" route="route_seO" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI19" route="route_ewI" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew019" route="route_ewO" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en019" route="route_en0" begin="64800" end="68400" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    19.00 -->
+    <flow id="flow_nsI20" route="route_nsI" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns020" route="route_nsO" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw020" route="route_nwO" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI20" route="route_weI" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we020" route="route_weO" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws020" route="route_ws0" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI20" route="route_snI" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn020" route="route_snO" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se020" route="route_seO" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI20" route="route_ewI" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew020" route="route_ewO" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en020" route="route_en0" begin="68400" end="72000" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    20.00 -->
+    <flow id="flow_nsI21" route="route_nsI" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns021" route="route_nsO" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw021" route="route_nwO" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI21" route="route_weI" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we021" route="route_weO" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws021" route="route_ws0" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI21" route="route_snI" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn021" route="route_snO" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se021" route="route_seO" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI21" route="route_ewI" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew021" route="route_ewO" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en021" route="route_en0" begin="72000" end="75600" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    21.00 -->
+    <flow id="flow_nsI22" route="route_nsI" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns022" route="route_nsO" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw022" route="route_nwO" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI22" route="route_weI" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we022" route="route_weO" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws022" route="route_ws0" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI22" route="route_snI" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn022" route="route_snO" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se022" route="route_seO" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI22" route="route_ewI" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew022" route="route_ewO" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en022" route="route_en0" begin="75600" end="79200" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    22.00 -->
+    <flow id="flow_nsI23" route="route_nsI" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns023" route="route_nsO" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw023" route="route_nwO" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI23" route="route_weI" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we023" route="route_weO" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws023" route="route_ws0" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI23" route="route_snI" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn023" route="route_snO" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se023" route="route_seO" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI23" route="route_ewI" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew023" route="route_ewO" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en023" route="route_en0" begin="79200" end="82800" vehsPerHour="383" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <!--  =================================================================================================================================================  -->
+
+    <!--    23.00 -->
+    <flow id="flow_nsI24" route="route_nsI" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ns024" route="route_nsO" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_nw024" route="route_nwO" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_weI24" route="route_weI" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_we024" route="route_weO" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ws024" route="route_ws0" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_snI24" route="route_snI" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_sn024" route="route_snO" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_se024" route="route_seO" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+    <flow id="flow_ewI24" route="route_ewI" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_ew024" route="route_ewO" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+    <flow id="flow_en024" route="route_en0" begin="82800" end="86400" vehsPerHour="250" departSpeed="speedLimit" departPos="base" departLane="best"/>
+
+<!--    Total Vehicles: 157500 -->
+<!--    Hour One:  -->
+<!--    Hour Two:  -->
+<!--    Hour Three: -->
+<!--    Hour Four: -->
+<!--    Hour Five: -->
+<!--    Hour Six: -->
+<!--    Hour Seven: -->
+<!--    Hour Eight: -->
+<!--    Hour Nine: 6593 -->
+<!--    Hour Ten: 6593 -->
+<!--    Hour Eleven: 4594 -->
+<!--    Hour Twelve: 4594 -->
+<!--    Hour Thirteen: -->
+<!--    Hour Fourteen: 6593 -->
+<!--    Hour Fifteen: -->
+<!--    Hour Sixteen: 6595 -->
+<!--    Hour Seventeen: 6595 -->
+<!--    Hour Eighteen: 6595 -->
+<!--    Hour Nineteen: -->
+<!--    Hour Twenty: -->
+<!--    Hour Twenty-One: -->
+<!--    Hour Twenty-Two: -->
+<!--    Hour Twenty-Three: -->
+<!--    Hour Twenty-Four: -->
+
+</routes>
