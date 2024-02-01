@@ -1,0 +1,12 @@
+<configuration>
+	<input>
+		<net-file value="networkFile.net.xml"/>
+		<route-files value="../ph2SUMO/dayWaves.rou.xml"/>
+	</input>
+	
+	<time>
+		<begin value="0"/>
+		<end value="86400"/>
+	</time>
+
+</configuration>

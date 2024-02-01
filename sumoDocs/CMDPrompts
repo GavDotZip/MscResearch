@@ -1,0 +1,7 @@
+netconvert --node-files nodeFile.nod.xml --edge-files edgeFile.edg.xml -i lights.xml -o networkFile.net.xml
+
+netconvert -n singleNetwork.net.xml -i lights.xml -o networkFile.net.xml
+
+py "C:\Program Files (x86)\Eclipse\Sumo\tools\randomTrips.py" -n networkFile.net.xml -r routeFile.rou.xml -e 500 -l
+
+py "C:\Program Files (x86)\Eclipse\Sumo\tools\randomTrips.py" -n networkFile.net.xml -r routeFile.rou.xml -e 1000 -l
