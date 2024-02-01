@@ -1,0 +1,13 @@
+<additional>
+	<vTypeDistribution id="randVehicles">
+		<vType id="bike" length="2.2" width="0.9" height="1.5" minGap="1.0" sigma="0.6" accel="6.0" decel="10.0" maxSpeed="25.0" guiShape="motorcycle" probability="0.05"/>
+		<vType id="car" length="4.3" width="1.8" height="1.5" minGap="1.2" sigma="0.5" accel="2.9" decel="7.5" maxSpeed="27.78" guiShape="passenger" probability="0.7"/>
+		<vType id="van" length="7.1" width="2.4" height="2.4" minGap="1.5" sigma="0.5" accel="1.3" decel="4.0" maxSpeed="22.22" guiShape="truck" color="0.753,0.753,0.753" probability="0.15"/>
+		<vType id="bustruck" length="12.0" width="2.5" height="3.4" minGap="1.5" sigma="0.5" accel="1.2" decel="4.0" maxSpeed="19.44" guiShape="bus" color="0.678,1.0,0.184" probability="0.1"/>
+    </vTypeDistribution>
+</additional>
+
+<!-- As per: https://connachttribune.ie/450000-car-journeys-galway-city-week/
+		there is 450000 car journeys into Galway City each week. This translates to 64286 journeys daily.
+		From this, we can see that there are 70% cars, 5% motrocycles, 15% vans, 10% trucks as per:
+		https://data.cso.ie/ -->
