@@ -25,6 +25,7 @@ def flatList(_2d_list):
             flattenedList.append(element)
     return flattenedList
 
+
 # Set the data values to be extracted
 while traci.simulation.getMinExpectedNumber() > 0:
     traci.simulationStep()
@@ -62,4 +63,3 @@ columnnames = ["step", "system_total_waiting_time", "system_total_emissions",
 dataset = pd.DataFrame(BigData, index=None, columns=columnnames)
 dataset.to_excel("dqnresults/PhaseOneTraditionalFixedStats.xlsx", index=False)
 time.sleep(5)
-
