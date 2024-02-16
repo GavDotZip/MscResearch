@@ -1,13 +1,20 @@
-"""Q-learning Agent class."""
-
 from rlDocs.agents.eGreedy import EpsilonGreedy
-
 
 class QLAgent:
     """Q-learning Agent class."""
 
     def __init__(self, starting_state, state_space, action_space, alpha=0.5, gamma=0.95, exploration_strategy=EpsilonGreedy()):
-        """Initialize Q-learning agent."""
+        """
+        Initialize Q-learning agent.
+
+        Parameters:
+            starting_state (object): The initial state of the agent.
+            state_space (object): The space of possible states.
+            action_space (object): The space of possible actions.
+            alpha (float): The learning rate (default is 0.5).
+            gamma (float): The discount factor (default is 0.95).
+            exploration_strategy (object): The exploration strategy (default is EpsilonGreedy()).
+        """
         self.state = starting_state
         self.state_space = state_space
         self.action_space = action_space
@@ -19,12 +26,24 @@ class QLAgent:
         self.acc_reward = 0
 
     def act(self):
-        """Choose action based on Q-table."""
+        """
+        Choose action based on Q-table.
+
+        Returns:
+            int: The chosen action.
+        """
         self.action = self.exploration.choose(self.q_table, self.state, self.action_space)
         return self.action
 
     def learn(self, next_state, reward, done=False):
-        """Update Q-table with new experience."""
+        """
+        Update Q-table with new experience.
+
+        Parameters:
+            next_state (object): The next state after taking an action.
+            reward (float): The reward received from the environment.
+            done (bool): Indicates whether the episode is finished.
+        """
         if next_state not in self.q_table:
             self.q_table[next_state] = [0 for _ in range(self.action_space.n)]
 
