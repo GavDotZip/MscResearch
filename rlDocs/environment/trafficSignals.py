@@ -1,4 +1,3 @@
-"""This module contains the TrafficSignal class, which represents a traffic signal in the simulation."""
 import os
 import sys
 from typing import Callable, List, Union
@@ -26,10 +25,10 @@ class TrafficSignal:
 
     obs = [phase_one_hot, min_green, lane_1_density,...,lane_n_density, lane_1_queue,...,lane_n_queue]
 
-    - ```phase_one_hot``` is a one-hot encoded vector indicating the current active green phase
-    - ```min_green``` is a binary variable indicating whether min_green seconds have already passed in the current phase
-    - ```lane_i_density``` is the number of vehicles in incoming lane i dividided by the total capacity of the lane
-    - ```lane_i_queue``` is the number of queued (speed below 0.1 m/s) vehicles in incoming lane i divided by the total capacity of the lane
+    - `phase_one_hot` is a one-hot encoded vector indicating the current active green phase
+    - `min_green` is a binary variable indicating whether min_green seconds have already passed in the current phase
+    - `lane_i_density` is the number of vehicles in incoming lane i dividided by the total capacity of the lane
+    - `lane_i_queue` is the number of queued (speed below 0.1 m/s) vehicles in incoming lane i divided by the total capacity of the lane
 
     You can change the observation space by implementing a custom observation class. See :py:class:`sumo_rl.environment.observations.ObservationFunction`.
 
@@ -44,16 +43,16 @@ class TrafficSignal:
     MIN_GAP = 2.5
 
     def __init__(
-            self,
-            env,
-            ts_id: str,
-            delta_time: int,
-            yellow_time: int,
-            min_green: int,
-            max_green: int,
-            begin_time: int,
-            reward_fn: Union[str, Callable],
-            sumo,
+        self,
+        env,
+        ts_id: str,
+        delta_time: int,
+        yellow_time: int,
+        min_green: int,
+        max_green: int,
+        begin_time: int,
+        reward_fn: Union[str, Callable],
+        sumo,
     ):
         """Initializes a TrafficSignal object.
 
@@ -151,7 +150,6 @@ class TrafficSignal:
         """
         self.time_since_last_phase_change += 1
         if self.is_yellow and self.time_since_last_phase_change == self.yellow_time:
-            # self.sumo.trafficlight.setPhase(self.id, self.green_phase)
             self.sumo.trafficlight.setRedYellowGreenState(self.id, self.all_phases[self.green_phase].state)
             self.is_yellow = False
 
@@ -163,11 +161,9 @@ class TrafficSignal:
         """
         new_phase = int(new_phase)
         if self.green_phase == new_phase or self.time_since_last_phase_change < self.yellow_time + self.min_green:
-            # self.sumo.trafficlight.setPhase(self.id, self.green_phase)
             self.sumo.trafficlight.setRedYellowGreenState(self.id, self.all_phases[self.green_phase].state)
             self.next_action_time = self.env.sim_step + self.delta_time
         else:
-            # self.sumo.trafficlight.setPhase(self.id, self.yellow_dict[(self.green_phase, new_phase)])  # turns yellow
             self.sumo.trafficlight.setRedYellowGreenState(
                 self.id, self.all_phases[self.yellow_dict[(self.green_phase, new_phase)]].state
             )
