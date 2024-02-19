@@ -40,3 +40,14 @@ analysis_results <- data.frame(
 
 # View the analysis results
 print(analysis_results)
+
+
+# Calculate totals of each column over the runtime
+totals <- apply(ph1TFdata[, -1], 2, cumsum)  # Calculate cumulative sum of each column
+
+# Create a dataframe for plotting
+totals_df <- data.frame(
+  Step = ph1TFdata$step,
+  totals
+)
+
