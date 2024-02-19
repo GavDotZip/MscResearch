@@ -97,6 +97,19 @@ ggplot(ph1TFdata_aggregated, aes(x = Group, y = Avg_Emissions)) +
 
 
 
-# Create the new variable QoLDataTF
+# Create the proportions of noise caused and fuel consumption relative to QoLDataTF
 ph1TFdata <- ph1TFdata %>%
-  mutate(QoLDataTF = system_total_noise_caused + system_total_fuel_consumption)
+  mutate(Noise_Proportion = system_total_noise_caused / QoLDataTF,
+         Fuel_Consumption_Proportion = system_total_fuel_consumption / QoLDataTF)
+
+# Plot noise caused and fuel consumption as a pie chart
+ggplot(ph1TFdata) +
+  geom_bar(aes(x = "", y = Noise_Proportion, fill = "Noise Caused"), stat = "identity", width = 1) +
+  geom_bar(aes(x = "", y = Fuel_Consumption_Proportion, fill = "Fuel Consumption"), stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("Noise Caused" = "skyblue", "Fuel Consumption" = "orange")) +
+  labs(title = "Proportion of Noise Caused and Fuel Consumption",
+       fill = "Category") +
+  theme_void() +
+  theme(legend.position = "bottom")
+ 
