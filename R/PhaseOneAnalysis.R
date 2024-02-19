@@ -61,3 +61,5 @@ ggplot(totals_df, aes(x = Step, y = Total, color = Variable)) +
   geom_line() +
   labs(title = "Total of Each Column Over Runtime", x = "Step", y = "Total") +
   theme_minimal()
+
+
