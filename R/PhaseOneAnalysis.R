@@ -51,3 +51,11 @@ totals_df <- data.frame(
   totals
 )
 
+# Reshape the dataframe for plotting
+totals_df <- tidyr::pivot_longer(totals_df, -Step, names_to = "Variable", values_to = "Total")
+
+# Plot the totals of each column over the runtime
+ggplot(totals_df, aes(x = Step, y = Total, color = Variable)) +
+  geom_line() +
+  labs(title = "Total of Each Column Over Runtime", x = "Step", y = "Total") +
+  theme_minimal()
