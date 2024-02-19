@@ -63,3 +63,17 @@ ggplot(totals_df, aes(x = Step, y = Total, color = Variable)) +
   theme_minimal()
 
 
+# Create a time series object for system_total_emissions column
+emissions_ts <- ts(ph1TFdata$system_total_emissions)
+
+# Forecast future figures for system_total_emissions
+emissions_forecast <- forecast(auto.arima(emissions_ts), h = 100)  # Forecast next 10 steps
+
+# Plot the forecasted figures for system_total_emissions
+plot(emissions_forecast, main = "Forecasted System Total Emissions")
+
+# Alternatively, plot using autoplot
+autoplot(emissions_forecast) +
+  labs(title = "Forecasted System Total Emissions",
+       x = "Step", y = "Total") +
+  theme_minimal()
