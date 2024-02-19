@@ -43,6 +43,25 @@ analysis_results <- data.frame(
 # View the analysis results
 print(analysis_results)
 
+# Calculate means, medians, and standard deviations for each column
+summary_stats <- ph1TFdata %>%
+  summarise(across(everything(), list(mean = mean, median = median, sd = sd)))
+
+# Reshape the data for plotting
+summary_stats_long <- summary_stats %>%
+  pivot_longer(cols = everything(),
+               names_to = c(".value", "stat"),
+               names_sep = "_")
+
+# Plot means, medians, and standard deviations as a bar chart
+ggplot(summary_stats_long, aes(x = stat, y = value, fill = stat)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
+  facet_wrap(~name, scales = "free") +
+  labs(title = "Summary Statistics of Columns",
+       x = "Statistic",
+       y = "Value") +
+  theme_minimal()
+
 
 # Calculate totals of each column over the runtime
 totals <- apply(ph1TFdata[, -1], 2, cumsum)  # Calculate cumulative sum of each column
@@ -70,7 +89,7 @@ ggplot(totals_df, aes(x = Step, y = Total, color = Variable)) +
 emissions_ts <- ts(ph1TFdata$system_total_emissions)
 
 # Forecast future figures for system_total_emissions
-emissions_forecast <- forecast(auto.arima(emissions_ts), h = 100)  # Forecast next 10 steps
+emissions_forecast <- forecast(auto.arima(emissions_ts), h = 100)  # Forecast next 100 steps
 
 # Plot the forecasted figures for system_total_emissions
 plot(emissions_forecast, main = "Forecasted System Total Emissions")
