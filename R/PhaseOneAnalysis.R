@@ -62,6 +62,9 @@ ggplot(totals_df, aes(x = Step, y = Total, color = Variable)) +
   labs(title = "Total of Each Column Over Runtime", x = "Step", y = "Total") +
   theme_minimal()
 
+############################
+# Forecast Total Emissions #
+############################
 
 # Create a time series object for system_total_emissions column
 emissions_ts <- ts(ph1TFdata$system_total_emissions)
