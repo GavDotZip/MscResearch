@@ -94,3 +94,9 @@ ggplot(ph1TFdata_aggregated, aes(x = Group, y = Avg_Emissions)) +
        x = "Step Group",
        y = "Average System Total Emissions") +
   theme_minimal()
+
+
+
+# Create the new variable QoLDataTF
+ph1TFdata <- ph1TFdata %>%
+  mutate(QoLDataTF = system_total_noise_caused + system_total_fuel_consumption)
