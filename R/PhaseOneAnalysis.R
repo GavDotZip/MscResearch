@@ -3,6 +3,8 @@ library(readxl)
 library(tidyverse)
 library(tidytext)
 library(ggplot2)
+library(forecast)
+
 
 # Load in data
 p1TradFixed <- "C:/Users/gavin/MscResearch/src/ph1/results/PhaseOneTraditionalFixed.xlsx"
