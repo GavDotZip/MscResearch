@@ -84,5 +84,13 @@ autoplot(emissions_forecast) +
 
 # Aggregate data for every 100 steps
 ph1TFdata_aggregated <- ph1TFdata %>%
-  group_by(Group = ceiling(Step / 100)) %>%
+  group_by(Group = ceiling(step / 100)) %>%
   summarise(Avg_Emissions = mean(system_total_emissions))
+
+# Plot system_total_emissions as a bar chart for every 100 steps
+ggplot(ph1TFdata_aggregated, aes(x = Group, y = Avg_Emissions)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Average System Total Emissions for Every 100 Steps",
+       x = "Step Group",
+       y = "Average System Total Emissions") +
+  theme_minimal()
