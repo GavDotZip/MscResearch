@@ -113,3 +113,9 @@ ggplot(ph1TFdata) +
   theme_void() +
   theme(legend.position = "bottom")
  
+
+# Perform two-tailed t-test on system_total_emissions
+t_test_result <- t.test(ph1TFdata$system_total_emissions)
+
+# Print the t-test result
+print(t_test_result)
