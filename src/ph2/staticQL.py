@@ -2,8 +2,8 @@ import argparse
 import os
 import sys
 from rlDocs.environment.environment import SumoEnvironment
-from rlDocs.rlAgents.eGreedy import EpsilonGreedy
-from rlDocs.rlAgents.qlAlgo import QLAgent
+from rlDocs.agents.eGreedy import EpsilonGreedy
+from rlDocs.agents.qlAlgo import QLAgent
 
 if "SUMO_HOME" in os.environ:
     tools = os.path.join(os.environ["SUMO_HOME"], "tools")
