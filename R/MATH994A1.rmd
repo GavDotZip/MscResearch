@@ -1,0 +1,140 @@
+---
+title: "MATH9904 Assignment bayes TK"
+output: html_document
+date: "2024-02-28"
+---
+
+Suppose that you are interested in estimating the outcome of an upcoming referendum. Let $\theta$ denote the proportion of the voting population who intend to vote "Yes". In order for the referendum to pass, 60% of voters must vote "Yes". You conduct a survey, selecting 35 people at random and find that 23 intend to vote "Yes".
+
+## Question 1 \[4 marks\]
+
+You decide to model your prior for $\theta$ using a beta distribution. Based on past experience, you believe that the median value of $\theta$ should be 0.55 and you are 90% confident that $\theta$ should be below 0.75. Find an appropriate beta distribution to match these beliefs.
+
+## Solution 1
+
+```{R}
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages("rmarkdown")
+library(tidyverse)
+library(LearnBayes)
+#RV x has a beta distribution beta(a, b) where a,b > 0, it has the density P(x) = 1/beta(a,b)^a-1
+#We assume $\theta$ ~ beta(a,b)
+#a, b need to be > 0 such that P($\theta$ < 0.55) = 0.5 and PP($\theta$ < 0.9) = 0.75 will hold. 
+#Calculate beta parameters using quantiles
+quantile1 = list(p = 0.5, x = 0.55) #median: p = 0.5
+quantile2 = list(p = 0.9, x = 0.75)
+prior_params = beta.select(quantile1, quantile2)
+prior_params
+#[1] 5.03 4.18 
+#If we choose these two values, the statements P($\theta$ < 0.55) = 0.5 and PP($\theta$ < 0.9) = 0.75 will hold. 
+```
+
+## Question 2 \[10 marks\]
+
+Find the posterior distribution of $\theta$ (justify your answer). Plot the prior and posterior distributions on the same set of axes. Label your plot clearly so that the two distributions can be distinguished and also label the axes.
+
+##Solution 2
+
+```{R}
+#To find the posterior distribution for $\theta$: n = 35, y = 23. 
+#Prior: $\theta$ ~  beta(a,b)
+#Likelihood: (y|$\theta$) ~ binom(n, $\theta$)
+#Posterior: ($\theta$|y) ~ beta(a+y, b+n-y)
+#Likelihood: L($\theta$) = P(y|$\theta$) = (n_choose_y)($\theta$^y)(1-$\theta$)^(n_choose_y)
+#            L($\theta$) is proportional to ($\theta$)^y(1-$\theta$)^n-y, viewing y as fixed
+obs_data = c(23,12)
+a = prior_params[1]
+b = prior_params[2]
+s = obs_data[1]
+f = obs_data[2]
+
+ggplot() +
+  xlim(0,1) + 
+  geom_function(fun = dbeta,
+                args = list("shape1" = a,
+                            "shape2" = b),
+                aes(colour = "Prior")) + 
+  geom_function(fun = dbeta,
+                args = list("shape1" = a + s,
+                            "shape2" = b + f),
+                aes(colour = "Posterior")) +
+  geom_function(fun = dbeta,
+                args = list("shape1" = s + 1,
+                            "shape2" = f + 1),
+                aes(colour = "Likelihood")) +
+  labs(colour = "",
+       x = "Proportion of people voting yes",
+       y = "Density")
+
+```
+
+## Question 3 \[5 marks\]
+
+Calculate the posterior probability that the referendum passes? Find a number $a\in[0,1]$ such that the posterior probability that $\theta>a$ is 90%.
+
+##Solution 3
+
+```{R}
+#P($\theta$ > 0.5|y) = P(beta(a+y, b+n-y) > 0.5) 
+(beta(5.26, 16.18))
+pbeta(0.6, a+s, b+f, lower.tail = FALSE)
+#[1] 0.6877219
+
+#Credible interval
+alpha = qbeta(0.1, a+s, b+f)
+alpha
+#[1] 0.540277
+
+#If we choose this value, P($\theta$ > alpha) = 90% is satisfied.
+```
+
+## Question 4 \[7 marks\]
+
+Suppose that your colleague uses information on voting patterns in recent elections to form a discrete prior for $\theta$ as given in this table:
+
+| $\theta$    | $0.35$ | $0.45$ | $0.55$ | $0.65$ | $0.75$ | $0.85$ | $0.95$ |
+|-------------|--------|--------|--------|--------|--------|--------|--------|
+| $p(\theta)$ | $0.05$ | $0.10$ | $0.15$ | $0.35$ | $0.20$ | $0.10$ | $0.05$ |
+
+: {.bordered}
+
+Compute the posterior distribution for $\theta$ and display the values (rounded to three decimal places) in a nicely formatted table. (Hint: Use the function `kable` from the `knitr` package.)
+
+##Solution 4
+
+```{R}
+values = seq(0.35, 0.95, 0.10)
+discrete_prior = c(0.05, 0.10, 0.15, 0.35, 0.20, 0.10, 0.05)
+obs_data = c(23,12)
+discrete_posterior = pdisc(values, discrete_prior, obs_data)
+discrete_posterior
+round(discrete_posterior, 3)
+#[1] 0.000 0.009 0.127 0.677 0.183 0.004 0.000
+install.packages("knitr")
+library(knitr)
+
+data = data.frame(
+  theta = values, 
+  colleague_priors = discrete_posterior,
+  my_priors = round(discrete_posterior, 3))
+  
+kable(data, format = "markdown")
+
+  
+```
+
+## Question 5 \[7 marks\]
+
+Do both of these priors (i.e. yours and your colleague's) lead to the same conclusions? Discuss this issue and give some evidence for your answer.
+
+##Solution 5
+
+The conclusions drawn from both of these priors can differ for many reasons.
+
+The conclusions drawn can differ because my prior is based on specific quantiles that reflect my belief about the median and an upper bound for the proportion of "Yes" voters and my colleague's prior is based on historical voting patterns without incorporating upper and lower bounds.
+
+The beta distribution allows for the more flexible representation of prior beliefs, with the incorporation of quantiles to capture specific confidence levels. The discrete prior may not capture the nuances of prior beliefs to the same level of effectiveness.
+
+The posterior distribution depends heavily a lot on the interplay between prior beliefs and observed data. In my case, the posterior is influenced by the prior beliefs and the likelihood of observing 23 yes votes out of 35 people voting. In my colleagues case, the discrete prior assigns probabilities to specific values of theta but this might not update beliefs based on observed data.
+
+Sensitivity analysis can be used to understand how the use of different priors can impact conclusions. Varying the parameters of the beta distribution or adjusting the probabilities in the discrete prior can provide insights into the robustness of the conclusions.
