@@ -121,3 +121,44 @@ t_test_resultFC <- t.test(ph1TFdata$system_total_fuel_consumption)
 # Print the t-test result
 print(t_test_resultSTE)
 print(t_test_resultFC)
+
+
+
+
+
+# Load in data
+p1QL50 <- "C:/Users/gavin/MscResearch/src/ph1/results/PhaseOneTraditionalQL50.xlsx"
+
+# Print data structure
+ph1QL50data <- read_excel(p1QL50)
+
+if (!is.null(ph1QL50data)) {
+  
+  # Display summary of traditional data
+  cat("\nSummary of Phase One Traditional Data:\n")
+  print(summary(ph1QL50data))
+  
+} else {
+  cat("Error: Failed to load data from one or more files.\n")
+}
+
+
+# Print basic numeric calculations
+mean_dataQL50 <- sapply(ph1QL50data[, -1], mean) 
+median_dataQL50 <- sapply(ph1QL50data[, -1], median)
+sd_dataL50 <- sapply(ph1QL50data[, -1], sd)
+
+# Round the results to 2 decimals
+mean_dataQL50 <- round(mean_dataTF, 2)
+median_dataL50 <- round(median_dataTF, 2)
+sd_dataL50 <- round(sd_dataTF, 2)
+
+# Combine results into a data frame
+analysis_results <- data.frame(
+  Mean = mean_dataQL50,
+  Median = median_dataL50,
+  SD = sd_dataTF
+)
+
+# View the analysis results
+print(sd_dataL50)
